@@ -34,6 +34,8 @@
   <!-- Absolute Path to PlateUp.exe   e.g: C:\\Program Files (x86)\\Steam\\SteamLibrary\\steamapps\\common\\PlateUp\\PlateUp -->
   <PropertyGroup>
     <PlateUpGameFolder>C:\Program Files (x86)\Steam\steamapps\common\PlateUp\PlateUp</PlateUpGameFolder>
+    <EnableAssetBundleDeploy>true</EnableAssetBundleDeploy>
+    <AssetBundlePath>$(ProjectDir)\garlicbread.assets</AssetBundlePath>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Controllers">
@@ -41,6 +43,9 @@
     </Reference>
     <Reference Include="Harmony">
       <HintPath>$(PlateUpGameFolder)\..\..\..\workshop\content\1599600\2898033283\0Harmony.dll</HintPath>
+    </Reference>
+    <Reference Include="IngredientLib">
+      <HintPath>$(PlateUpGameFolder)\..\..\..\workshop\content\1599600\2913877103\IngredientLib.dll</HintPath>
     </Reference>
     <Reference Include="Kitchen.Common">
       <HintPath>$(PlateUpGameFolder)\PlateUp_Data\Managed\Kitchen.Common.dll</HintPath>
@@ -102,6 +107,9 @@
     <Reference Include="UnityEngine">
       <HintPath>$(PlateUpGameFolder)\PlateUp_Data\Managed\UnityEngine.dll</HintPath>
     </Reference>
+    <Reference Include="UnityEngine.AssetBundleModule">
+      <HintPath>$(PlateUpGameFolder)\PlateUp_Data\Managed\UnityEngine.AssetBundleModule.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEngine.IMGUIModule">
       <HintPath>$(PlateUpGameFolder)\PlateUp_Data\Managed\UnityEngine.IMGUIModule.dll</HintPath>
     </Reference>
@@ -116,7 +124,8 @@
     <Reference Include="System.Data" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Mod.cs" />
+    <Compile Include="Main.cs" />
+    <Compile Include="UncookedGarlicBread.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
